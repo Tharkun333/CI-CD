@@ -3,6 +3,8 @@ stages:
   - test
 
 unit_tests:
+  tags: 
+    - docker
   stage: test
   coverage: /TOTAL.*\s+(\d+\%)$/
   script:
