@@ -3,14 +3,18 @@ stages:
   - test
 
 unit_tests:
-  tags: 
+  tags:
     - docker
   stage: test
-  coverage: /TOTAL.*\s+(\d+\%)$/
   script:
     - pip install poetry
     - poetry install
     - poetry run pip install --upgrade tox
     - poetry run tox
-    # - poetry run coverage run -m pytest
-    # - poetry run coverage report
+    - poetry run coverage run -m pytest  # Exécutez vos tests en collectant la couverture
+    - poetry run coverage xml -o coverage.xml  # Générer le rapport de couverture au format XML
+  artifacts:
+    paths:
+      - coverage.xml  # Assurez-vous que le rapport est disponible comme artefact
+
+    
