@@ -12,7 +12,7 @@ unit_tests:
     - poetry run pip install --upgrade tox
     - poetry run tox
     - poetry run coverage run -m pytest  # Exécutez vos tests en collectant la couverture
-    - poetry run coverage xml -o coverage.xml  # Générer le rapport de couverture au format XML
+    - poetry run coverage report
   artifacts:
     paths:
       - coverage.xml  # Assurez-vous que le rapport est disponible comme artefact
