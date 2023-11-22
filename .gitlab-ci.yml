@@ -1,12 +1,14 @@
+image: python:3.8
 stages:
   - test
 
-
-test:
+unit_tests:
   stage: test
+  coverage: /TOTAL.*\s+(\d+\%)$/
   script:
+    - pip install poetry
     - poetry install
+    - poetry run pip install --upgrade tox
     - poetry run tox
-    - poetry run pytest test_arithmetic.py 
-  only:
-    - main
+    # - poetry run coverage run -m pytest
+    # - poetry run coverage report
