@@ -6,9 +6,6 @@ test:
   script:
     - poetry install
     - poetry run tox
-  artifacts:
-    paths:
-      - coverage.xml # Ajoutez ici le chemin vers le fichier de couverture des tests généré par Tox
-  coverage: '/^\s*TOTAL\s+\d+\s+\d+\s+(\d+\%)$/'
+    - poetry run pytest test_arithmetic.py 
   only:
     - main
