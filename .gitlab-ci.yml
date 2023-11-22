@@ -13,8 +13,4 @@ unit_tests:
     - poetry run tox
     - poetry run coverage run -m pytest  # Exécutez vos tests en collectant la couverture
     - poetry run coverage report
-  artifacts:
-    paths:
-      - coverage.xml  # Assurez-vous que le rapport est disponible comme artefact
-
-    
+  
