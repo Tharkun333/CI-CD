@@ -6,11 +6,10 @@ unit_tests:
   tags:
     - docker
   stage: test
+  coverage: /(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/
   script:
     - pip install poetry
     - poetry install
-    - poetry run pip install --upgrade tox
-    - poetry run tox
     - poetry run coverage run -m pytest  # Exécutez vos tests en collectant la couverture
     - poetry run coverage report
-  
+  coverage: /(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/
