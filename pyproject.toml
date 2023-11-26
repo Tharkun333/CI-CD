@@ -10,6 +10,7 @@ python = "^3.8"
 tox = "^3.24"
 coverage = "*"
 pytest = "*"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
