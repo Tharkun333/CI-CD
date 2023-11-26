@@ -113,6 +113,8 @@ git commit -m "Ajout .gitlab-ci.yml"
 git branch -m master main
 git push -u origin main
 
+Au cours de notre projet sur GitLab, nous avons rencontré plusieurs défis. L’un d’eux concernait l’utilisation des pipelines. Au début, nous avons eu du mal à les mettre en place car nous n’avions pas utilisé les bons tags. Cela a rendu le processus difficile à comprendre et à gérer. Cependant, grâce à votre aide, nous avons finalement réussi à identifier et à mettre en place les tags appropriés. Cela a grandement amélioré notre utilisation des pipelines.
+
 ## Configuration pour le badge :
 
 ### Modifier le fichier pyproject.toml
@@ -147,6 +149,8 @@ coverage: /(?i)total.\*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/
 ```
 
 ![Texte alternatif](./images/badge.png)
+
+En ce qui concerne les badges, nous avons également rencontré des difficultés. Nous avons réussi à les afficher, mais ils étaient constamment gris. Après avoir examiné la situation, nous avons réalisé que notre coverage dans le fichier n’était pas correcte. Une fois que nous avons corrigé cela, les badges ont commencé à fonctionner correctement.
 
 ---
 
