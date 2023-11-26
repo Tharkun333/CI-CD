@@ -1,3 +1,8 @@
+# Projet effecté par les GUILLAUMES
+
+- Guillaume Peyrelongue
+- Guillaume Lavergne
+
 # Exercice 1 (Configuration de l’environnement local)
 
 ## Ajouter la clé GPG et le repository
