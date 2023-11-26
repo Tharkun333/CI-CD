@@ -10,7 +10,16 @@ python = "^3.8"
 tox = "*"
 coverage = "*"
 pytest = "*"
+poetry-dynamic-versioning = "*"
+
+[tool.poetry.group.dev.dependencies]
+poetry-dynamic-versioning = "^1.1.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-dynamic-versioning]
+include-timestamp = true
+enable-git-versioning = true
+style = "pep440"

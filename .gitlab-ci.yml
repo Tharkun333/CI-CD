@@ -1,6 +1,7 @@
 image: python:3.8
 stages:
   - test
+  - deploy
 
 unit_tests:
   tags:
@@ -12,4 +13,23 @@ unit_tests:
     - poetry install
     - poetry run coverage run -m pytest  # Exécutez vos tests en collectant la couverture
     - poetry run coverage report
-  coverage: /(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/
+
+deploy_stable:
+  stage: deploy
+  script:
+    - echo "my-arithmetic-$USER deployment on stable servers"
+    - poetry build
+    - ls dist/
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" && $CI_COMMIT_TAG != null'
+      when: on_success
+
+deploy_develop:
+  stage: deploy
+  script:
+    - echo "my-arithmetic-$USER deployment on develop server"
+    - poetry build
+    - ls dist/
+  rules:
+    - if: '$CI_COMMIT_BRANCH != "main" && $CI_COMMIT_TAG == null'
+      when: on_success
